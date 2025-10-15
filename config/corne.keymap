@@ -41,7 +41,7 @@
             sys_reset_macro: sys_reset_macro {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                seq = <&kp SYS_RESET>;
+                seq = <&sys_reset>;
             };
 
             bootloader_macro: bootloader_macro {
