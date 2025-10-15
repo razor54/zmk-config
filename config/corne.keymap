@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+* Copyright (c) 2020 The ZMK Contributors
+*
+* SPDX-License-Identifier: MIT
+*/
 
 #include <zmk-helpers/key-labels/42.h>
 #include <behaviors.dtsi>
@@ -31,115 +31,106 @@
 
 
 / {
-
-        combos {
-            compatible = "zmk,combos";
-            // see the key positions in this example: https://github.com/thrly/thrly-corne-zmk/blob/master/config/corne.dtsi
-            caps_word {
-                bindings = <&caps_word>;
-                key-positions = <17 18>;
-                layers = <0>;
-            };
-        
-            esc {
-                bindings = <&kp ESCAPE>;
-                key-positions = <1 2>;
-                layers = <0>;
-            };
+    macros {
+        bt_clr_macro: bt_clr_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &bt BT_CLR>;
         };
 
-        behaviors {
-            bhm: balanced_homerow_mods {
-                compatible = "zmk,behavior-hold-tap";
-                #binding-cells = <2>;
-                tapping-term-ms = <200>;    // <---[[moderate duration]]
-                quick-tap-ms = <0>;
-                flavor = "balanced";
-                bindings = <&kp>, <&kp>;
-            };
-
-            bt_clr_hold_2s: bt_clr_hold_2s {
-                compatible = "zmk,behavior-hold-tap";
-                label = "BT_CLR_HOLD_2S";
-                tapping-term-ms = <2000>;
-                quick-tap-ms = <0>;
-                flavor = "balanced";
-                bindings = <&bt BT_CLR>, <&none>;
-                /* bindings = <&trans &bt BT_CLR>; */
-            };
-
-            bt_clear_hold: bt_clear_hold {
-                compatible = "zmk,behavior-hold-tap";
-                #binding-cells = <2>;
-                tapping-term-ms = <250>;      // Time threshold for tap vs hold
-                flavor = "hold-preferred";    // Hold triggers BT Clear, tap does nothing or a safe key like trans
-                bindings = <&bt BT_CLR>, <&none>;
-                /* bindings = <&trans &bt BT_CLR>; */
-            };
-            
-            reset_hold: reset_hold {
-                compatible = "zmk,behavior-hold-tap";
-                #binding-cells = <2>;
-                tapping-term-ms = <250>;
-                flavor = "hold-preferred";
-                /* bindings = <&trans &sys_reset>; */
-                bindings = <&sys_reset>, <&none>;
-            };
-        
-            bootloader_hold: bootloader_hold {
-                compatible = "zmk,behavior-hold-tap";
-                #binding-cells = <2>;
-                tapping-term-ms = <250>;
-                flavor = "hold-preferred";
-                bindings = <&bootloader>, <&none>;
-            };
+        sys_reset_macro: sys_reset_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp SYS_RESET>;
         };
 
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-                        display-name = "Default Layer";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q         &kp W            &kp E              &kp R         &kp T    &kp Y  &kp U         &kp I               &kp O            &kp P                &kp BSPC
-   &kp LCTRL &bhm LMETA A  &bhm LEFT_ALT S  &bhm LEFT_SHIFT D  &bhm LCTRL F  &kp G    &kp H  &bhm RCTRL J  &bhm RIGHT_SHIFT K  &bhm LEFT_ALT L  &bhm LMETA SEMICOLON &kp SQT
-   &sk LSHFT &kp Z         &kp X            &kp C              &kp V         &kp B    &kp N  &kp M         &kp COMMA           &kp DOT          &kp FSLH             &kp ESC
-                  &kp LGUI &mo 1 &kp RET     &kp SPACE &lt 2 SPACE &kp RALT
-                        >;
-                };
-                lower_layer {
-                        display-name = "Lower Layer";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4   |  5  |   |  6  |  7   |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4  | BT5 |   | LFT | DWN  |  UP | RGT |     |      |
-// | SHFT |     |     | rst | botl |     |   |     | botl |     |     |     |      |
-//                    | GUI |      | ENT |   | SPC |      | ALT |
-                        bindings = <
-   &kp TAB        &kp N1       &kp N2       &kp N3           &kp N4            &kp N5             &kp N6                      &kp N7        &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt_clear_hold &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3      &bt BT_SEL 4       &kp LEFT                    &kp DOWN      &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT      &trans       &trans       &reset_hold      &bootloader_hold  &trans             &trans   &bootloader_hold   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp RET                    &kp SPACE  &trans   &kp RALT
-                        >;
-                };
-
-                raise_layer {
-                        display-name = "Raise Layer";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | ENT |   | SPC |     | rst |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp RET     &kp SPACE &trans    &reset_hold
-                        >;
-                };
+        bootloader_macro: bootloader_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &bootloader>;
         };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        // see the key positions in this example: https://github.com/thrly/thrly-corne-zmk/blob/master/config/corne.dtsi
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <17 18>;
+            layers = <0>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <1 2>;
+            layers = <0>;
+        };
+    };
+
+    behaviors {
+        bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+
+        destructive_hold: destructive_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <2000>;
+            flavor = "balanced";
+        };
+
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "Default Layer";
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
+            bindings = <
+                &kp TAB   &kp Q         &kp W            &kp E              &kp R         &kp T    &kp Y  &kp U         &kp I               &kp O            &kp P                &kp BSPC
+                &kp LCTRL &bhm LMETA A  &bhm LEFT_ALT S  &bhm LEFT_SHIFT D  &bhm LCTRL F  &kp G    &kp H  &bhm RCTRL J  &bhm RIGHT_SHIFT K  &bhm LEFT_ALT L  &bhm LMETA SEMICOLON &kp SQT
+                &sk LSHFT &kp Z         &kp X            &kp C              &kp V         &kp B    &kp N  &kp M         &kp COMMA           &kp DOT          &kp FSLH             &kp ESC
+                &kp LGUI &mo 1 &kp RET     &kp SPACE &lt 2 SPACE &kp RALT
+            >;
+        };
+        lower_layer {
+            display-name = "Lower Layer";
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  1  |  2  |  3  |  4   |  5  |   |  6  |  7   |  8  |  9  |  0  | BSPC |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4  | BT5 |   | LFT | DWN  |  UP | RGT |     |      |
+            // | SHFT |     |     | rst | botl |     |   |     | botl |     |     |     |      |
+            //                    | GUI |      | ENT |   | SPC |      | ALT |
+            bindings = <
+                &kp TAB        &kp N1       &kp N2       &kp N3           &kp N4            &kp N5             &kp N6                      &kp N7        &kp N8 &kp N9    &kp N0 &kp BSPC
+                &destructive_hold bt_clr_macro trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3      &bt BT_SEL 4       &kp LEFT                    &kp DOWN      &kp UP &kp RIGHT &trans &trans
+                &kp LSHFT      &trans       &trans       &destructive_hold sys_reset_macro trans      &destructive_hold bootloader_macro trans  &trans             &trans   &destructive_hold bootloader_macro trans   &trans &trans    &trans &trans
+                &kp LGUI     &trans       &kp RET                    &kp SPACE  &trans   &kp RALT
+            >;
+        };
+
+        raise_layer {
+            display-name = "Raise Layer";
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
+            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+            //                    | GUI |     | ENT |   | SPC |     | rst |
+            bindings = <
+                &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
+                &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
+                &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
+                &kp LGUI &trans   &kp RET     &kp SPACE &trans    &reset_hold
+            >;
+        };
+    };
 };
