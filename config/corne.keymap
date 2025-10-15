@@ -58,12 +58,23 @@
                 bindings = <&kp>, <&kp>;
             };
 
+            bt_clr_hold_2s: bt_clr_hold_2s {
+                compatible = "zmk,behavior-hold-tap";
+                label = "BT_CLR_HOLD_2S";
+                tapping-term-ms = <2000>;
+                quick-tap-ms = <0>;
+                flavor = "balanced";
+                bindings = <&bt BT_CLR>, <&none>;
+                /* bindings = <&trans &bt BT_CLR>; */
+            };
+
             bt_clear_hold: bt_clear_hold {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 tapping-term-ms = <250>;      // Time threshold for tap vs hold
                 flavor = "hold-preferred";    // Hold triggers BT Clear, tap does nothing or a safe key like trans
-                bindings = <&trans &bt BT_CLR>;
+                bindings = <&bt BT_CLR>, <&none>;
+                /* bindings = <&trans &bt BT_CLR>; */
             };
             
             reset_hold: reset_hold {
@@ -71,7 +82,8 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <250>;
                 flavor = "hold-preferred";
-                bindings = <&trans &sys_reset>;
+                /* bindings = <&trans &sys_reset>; */
+                bindings = <&sys_reset>, <&none>;
             };
         
             bootloader_hold: bootloader_hold {
@@ -79,7 +91,7 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <250>;
                 flavor = "hold-preferred";
-                bindings = <&trans &bootloader>;
+                bindings = <&bootloader>, <&none>;
             };
         };
 
