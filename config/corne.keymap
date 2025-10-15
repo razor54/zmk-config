@@ -35,19 +35,19 @@
             bt_clr_macro: bt_clr_macro {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings = <&macro_tap &bt BT_CLR>;
+                seq = <&bt BT_CLR>;
             };
 
             sys_reset_macro: sys_reset_macro {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings = <&macro_tap &kp SYS_RESET>;
+                seq = <&kp SYS_RESET>;
             };
 
             bootloader_macro: bootloader_macro {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings = <&macro_tap &bootloader>;
+                seq = <&bootloader>;
             };
         };
 
