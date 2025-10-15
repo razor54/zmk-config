@@ -10,6 +10,13 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+
+// Shorthand defines for complex key combinations
+#define SAFE_BT_CLEAR &destructive_hold &bt_clr_macro 0
+#define SAFE_RESET &destructive_hold &sys_reset_macro 0
+#define SAFE_BOOTLOADER &destructive_hold &bootloader_macro 0
+
+
 &sk {
     release-after-ms = <1000>;
     quick-release;
@@ -85,6 +92,60 @@
                 bindings = <&macro_tap>, <&none>;
             };
 
+            // Test the following later
+            safe_reset: safe_reset {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&none>, <&sys_reset>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+                keep-mods = <0>;
+            };
+
+            safe_bootloader: safe_bootloader {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&none>, <&bootloader>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+                keep-mods = <0>;
+            };
+
+            safe_bt_clear: safe_bt_clear {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&none>, <&bt BT_CLR>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+                keep-mods = <0>;
+            };
+            // or
+            /*
+            safe_bt_clear: safe_bt_clear {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <0>;
+                tapping-term-ms = <2000>;
+                flavor = "balanced";
+                bindings = <&bt BT_CLR>, <&none>;
+            };
+            
+            safe_reset: safe_reset {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <0>;
+                tapping-term-ms = <2000>;
+                flavor = "balanced";
+                bindings = <&sys_reset>, <&none>;
+            };
+            
+            safe_bootloader: safe_bootloader {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <0>;
+                tapping-term-ms = <2000>;
+                flavor = "balanced";
+                bindings = <&bootloader>, <&none>;
+            };
+            */
+            // end test
+            
+
+
         };
 
         keymap {
@@ -113,8 +174,8 @@
 //                    | GUI |      | ENT |   | SPC |      | ALT |
                         bindings = <
    &kp TAB        &kp N1       &kp N2       &kp N3           &kp N4            &kp N5             &kp N6                      &kp N7        &kp N8 &kp N9    &kp N0 &kp BSPC
-   &destructive_hold &bt_clr_macro 0 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3      &bt BT_SEL 4       &kp LEFT                    &kp DOWN      &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT      &trans       &trans       &destructive_hold &sys_reset_macro 0      &destructive_hold &bootloader_macro 0  &trans             &trans   &destructive_hold &bootloader_macro 0  &trans &trans    &trans &trans
+   SAFE_BT_CLEAR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3      &bt BT_SEL 4       &kp LEFT                    &kp DOWN      &kp UP &kp RIGHT &trans &trans
+   &kp LSHFT      &trans       &trans       SAFE_RESET      SAFE_BOOTLOADER  &trans             &trans   SAFE_BOOTLOADER  &trans &trans    &trans &trans
                                     &kp LGUI     &trans       &kp RET                    &kp SPACE  &trans   &kp RALT
                         >;
                 };
@@ -130,7 +191,7 @@
    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp RET     &kp SPACE &trans    &destructive_hold &sys_reset_macro 0
+                             &kp LGUI &trans   &kp RET     &kp SPACE &trans    SAFE_RESET
                         >;
                 };
         };
