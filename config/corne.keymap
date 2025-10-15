@@ -63,7 +63,7 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <250>;      // Time threshold for tap vs hold
                 flavor = "hold-preferred";    // Hold triggers BT Clear, tap does nothing or a safe key like trans
-                bindings = <&trans>, <&bt BT_CLR>;
+                bindings = <&trans &bt BT_CLR>;
             };
             
             reset_hold: reset_hold {
@@ -71,7 +71,7 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <250>;
                 flavor = "hold-preferred";
-                bindings = <&trans>, <&sys_reset>;
+                bindings = <&trans &sys_reset>;
             };
         
             bootloader_hold: bootloader_hold {
@@ -79,7 +79,7 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <250>;
                 flavor = "hold-preferred";
-                bindings = <&trans>, <&bootloader>;
+                bindings = <&trans &bootloader>;
             };
         };
 
