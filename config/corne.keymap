@@ -84,6 +84,15 @@
                 bindings = <&kp>, <&kp>;
             };
 
+            thm: tap_preferred_homerow_mods {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                tapping-term-ms = <300>;    // <---[[moderate duration]]
+                quick-tap-ms = <0>;
+                flavor = "tap-preferred";
+                bindings = <&kp>, <&kp>;
+            };
+
             destructive_hold: destructive_hold {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
@@ -160,7 +169,7 @@
 //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
                         bindings = <
    &kp TAB   &kp Q         &kp W            &kp E              &kp R         &kp T    &kp Y  &kp U         &kp I               &kp O            &kp P                &kp BSPC
-   &kp LCTRL &bhm LMETA A  &bhm LEFT_ALT S  &bhm LEFT_SHIFT D  &bhm LCTRL F  &kp G    &kp H  &bhm RCTRL J  &bhm RIGHT_SHIFT K  &bhm LEFT_ALT L  &bhm LMETA SEMICOLON &kp SQT
+   &kp LCTRL &thm LMETA A  &thm LEFT_ALT S  &thm LEFT_SHIFT D  &thm LCTRL F  &kp G    &kp H  &thm RCTRL J  &thm RIGHT_SHIFT K  &thm LEFT_ALT L  &thm LMETA SEMICOLON &kp SQT
    &sk LSHFT &kp Z         &kp X            &kp C              &kp V         &kp B    &kp N  &kp M         &kp COMMA           &kp DOT          &kp FSLH             &kp ESC
                   &kp LGUI &mo 1 &kp RET     &kp SPACE &lt 2 SPACE &kp RALT
                         >;
