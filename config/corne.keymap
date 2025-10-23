@@ -171,7 +171,7 @@
    &kp TAB   &kp Q         &kp W            &kp E              &kp R         &kp T    &kp Y  &kp U         &kp I               &kp O            &kp P                &kp BSPC
    &kp LCTRL &thm LMETA A  &thm LEFT_ALT S  &thm LEFT_SHIFT D  &thm LCTRL F  &kp G    &kp H  &thm RCTRL J  &thm RIGHT_SHIFT K  &thm LEFT_ALT L  &thm LMETA SEMICOLON &kp SQT
    &sk LSHFT &kp Z         &kp X            &kp C              &kp V         &kp B    &kp N  &kp M         &kp COMMA           &kp DOT          &kp FSLH             &kp ESC
-                  &kp LGUI &mo 1 &kp RET     &kp SPACE &lt 2 SPACE &kp RALT
+                  &kp LGUI &mo 1 &kp RET     &kp SPACE &lt 2 SPACE &tog 3
                         >;
                 };
                 lower_layer {
@@ -203,5 +203,16 @@
                              &kp LGUI &trans   &kp RET     &kp SPACE &trans    &safe_reset
                         >;
                 };
+
+                gallium_layer {
+                        display-name = "Gallium Layer";
+                        bindings = <
+   &kp TAB    &kp B    &kp L    &kp D      &kp C      &kp V      &kp J    &kp Y    &kp O        &kp U          &kp COMMA      &kp BSPC
+   &kp LCTRL  &kp N    &kp R    &kp T      &kp S      &kp G      &kp P    &kp H    &kp A        &kp E          &kp I          &kp SQT
+   &sk LSHFT  &kp X    &kp Q    &kp M      &kp W      &kp Z      &kp K    &kp F    &kp SQT      &kp SEMICOLON  &kp DOT        &kp ESC
+                           &kp LGUI  &mo 1  &kp RET    &kp SPACE  &lt 2 SPACE  &tog 3
+                        >;
+                };
+
         };
 };
