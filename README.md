@@ -53,3 +53,29 @@ To customize this layout for your own use, modify the following files:
 - `config/corne.conf` - Adjust keyboard settings
 
 For more information on ZMK configuration, visit the [ZMK Documentation](https://zmk.dev/docs).
+
+## Generating the Layout Image
+
+To visualize your keymap, you can use the [keymap-drawer](https://github.com/caksoylar/keymap-drawer) tool.
+
+### 1. Install keymap-drawer
+
+You need Python 3.7+ and pip installed. Then run:
+
+```bash
+pip install keymap-drawer
+```
+
+### 2. Generate the YAML keymap
+
+```bash
+keymap parse -c 10 -z ./config/corne.keymap > corne_keymap.yaml
+```
+
+### 3. Draw the SVG layout
+
+```bash
+keymap draw corne_keymap.yaml > corne_keymap.svg
+```
+
+The resulting `corne_keymap.svg` will be a visual representation of your keyboard layout.
