@@ -172,88 +172,109 @@
 
                 default_layer {
                         display-name = "Default Layer";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
+/*                 default_layer (QWERTY) {                                                                                                                                                           */
+/* //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮               */
+/*     &kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T       ,   &kp Y         &kp U         &kp I         &kp O         &kp P         &kp BSPC                        */
+/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤               */
+/*     &kp LCTRL     &thm LMETA A  &thm LALT S   &thm LSHFT D  &thm LCTRL F  &kp G       ,   &kp H         &thm RCTRL J  &thm RSHFT K  &thm LALT L   &thm LMETA ;  &kp SQT                       */
+/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤               */
+/*     &sk LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B       ,   &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp ESC                       */
+/* //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯               */
+/*                                               &kp LGUI      &mo 2         &kp RET     ,   &kp SPACE     &lt 3 SPACE   &tog 1                                                                  */
+/* //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯                                                           */
                         bindings = <
    &kp TAB   &kp Q         &kp W            &kp E              &kp R         &kp T    &kp Y  &kp U         &kp I               &kp O            &kp P                &kp BSPC
    &kp LCTRL &thm LMETA A  &thm LEFT_ALT S  &thm LEFT_SHIFT D  &thm LCTRL F  &kp G    &kp H  &thm RCTRL J  &thm RIGHT_SHIFT K  &thm LEFT_ALT L  &thm LMETA SEMICOLON &kp SQT
    &sk LSHFT &kp Z         &kp X            &kp C              &kp V         &kp B    &kp N  &kp M         &kp COMMA           &kp DOT          &kp FSLH             &kp ESC
                   &kp LGUI &mo 2 &kp RET     &kp SPACE &lt 3 SPACE &tog 1
                         >;
-                };
+/*                 };                                                                                                                                                                              */
                 
                 gallium_layer {
                         display-name = "Gallium Layer";
+/*                 gallium_layer {                                                                                                                                                                    */
+/* //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮               */
+/*     &kp TAB       &kp B         &kp L         &kp D         &kp C         &kp V       ,   &kp J         &kp Y         &kp O         &kp U         &kp COMMA     &kp BSPC                        */
+/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤               */
+/*     &kp LCTRL     &kp N         &kp R         &kp T         &kp S         &kp G       ,   &kp P         &kp H         &kp A         &kp E         &kp I         &kp SQT                         */
+/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤               */
+/*     &sk LSHFT     &kp X         &kp Q         &kp M         &kp W         &kp Z       ,   &kp K         &kp F         &kp SQT       &kp SEMI      &kp DOT       &kp ESC                         */
+/* //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯               */
+/*                                               &kp LGUI      &mo 2         &kp RET     ,   &kp SPACE     &lt 3 SPACE   &tog 1                                                                  */
+/* //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯                                                           */
                         bindings = <
    &kp TAB    &kp B    &kp L    &kp D      &kp C      &kp V      &kp J    &kp Y    &kp O        &kp U          &kp COMMA      &kp BSPC
    &kp LCTRL  &kp N    &kp R    &kp T      &kp S      &kp G      &kp P    &kp H    &kp A        &kp E          &kp I          &kp SQT
    &sk LSHFT  &kp X    &kp Q    &kp M      &kp W      &kp Z      &kp K    &kp F    &kp SQT      &kp SEMICOLON  &kp DOT        &kp ESC
                           &kp LGUI  &mo 2  &kp RET    &kp SPACE  &lt 3 SPACE  &tog 1
                         >;
+/*                 };                                                                                                                                                                              */
+/*                 };                                                                                                                                                                              */
                 };
                 
                 lower_layer {
                         display-name = "Lower Layer";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4   |  5  |   |  6  |  7   |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4  | BT5 |   | LFT | DWN  |  UP | RGT |     |      |
-// | SHFT |     |     | rst | botl |     |   |     | botl |     |     |     |      |
-//                    | GUI |      | ENT |   | SPC |      | ALT |
+/*                 lower_layer (Numbers & Controls) {                                                                                                                                                */
+/* //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮               */
+/*     &kp TAB       &kp N1        &kp N2        &kp N3        &kp N4        &kp N5      ,   &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &kp BSPC                        */
+/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤               */
+/*     SAFE_BT_CLEAR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4,   &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans        &trans                          */
+/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤               */
+/*     &kp LSHFT     &trans        &trans        SAFE_RESET    SAFE_BOOTLOAD &trans      ,   &trans        SAFE_BOOTLOAD &trans        &trans        &trans        &trans                          */
+/* //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯               */
+/*                                               &kp LGUI      &trans        &kp RET     ,   &kp SPACE     &trans        &kp RALT                                                                */
+/* //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯                                                           */
                         bindings = <
    &kp TAB        &kp N1        &kp N2       &kp N3           &kp N4            &kp N5             &kp N6   &kp N7            &kp N8 &kp N9    &kp N0 &kp BSPC
    &safe_bt_clear &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3      &bt BT_SEL 4       &kp LEFT &kp DOWN          &kp UP &kp RIGHT &trans &trans
    &kp LSHFT      &trans       &trans        &safe_reset      &safe_bootloader  &trans             &trans   &safe_bootloader  &trans &trans    &trans &trans
                                     &kp LGUI     &trans       &kp RET                    &kp SPACE  &trans   &kp RALT
                         >;
+/*                 };                                                                                                                                                                              */
+/*                 };                                                                                                                                                                              */
                 };
 
                 raise_layer {
                         display-name = "Raise Layer";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | ENT |   | SPC |     | rst |
+/*                 raise_layer (Symbols & Special) {                                                                                                                                                 */
+/* //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮               */
+/*     &kp TAB       &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT   ,   &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR      &kp BSPC                        */
+/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤               */
+/*     &kp LCTRL     &trans        &trans        &trans        &trans        &trans      ,   &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH      &kp GRAVE                       */
+/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤               */
+/*     &kp LSHFT     &trans        &trans        &trans        &trans        &trans      ,   &kp UNDER     &kp PLUS      &kp LBRC      &kp RBRC      &kp PIPE      &kp TILDE                       */
+/* //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯               */
+/*                                               &kp LGUI      &trans        &kp RET     ,   &kp SPACE     &trans        SAFE_RESET                                                              */
+/* //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯                                                           */
                         bindings = <
    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
                              &kp LGUI &trans   &kp RET     &kp SPACE &trans    &safe_reset
                         >;
+/*                 };                                                                                                                                                                              */
+/*                 };                                                                                                                                                                              */
                 };
 
                 symbol_layer {
                         display-name = "Symbol Layer";
-// -----------------------------------------------------------------------------------------
-// |  TAB |     |     |     |     |     |   |  ^  |  {  |  }  |  $  |     |      |
-// | CTRL | ESC | <   |  >  |  -  |  |  |   |  #  |  (  |  )  |  ;  |  "  |      |
-// | SHFT |  !  |  *  |  /  |  =  |  &  |   |  @  |  :  |  ,  |  .  |  '  |      |
-//                    | GUI |     | ENT |   | SPC |     | ALT |
+/*                 symbol_layer {                                                                                                                                                                     */
+/* //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮               */
+/*     &kp TAB       &trans        &trans        &trans        &trans        &trans      ,   &kp CARET     &kp LBRC      &kp RBRC      &kp DLLR      &trans        &trans                          */
+/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤               */
+/*     &kp LCTRL     &kp ESC       &kp LT        &kp GT        &kp MINUS     &kp PIPE    ,   &kp HASH      &kp LPAR      &kp RPAR      &kp SEMI      &kp DQT       &trans                          */
+/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤               */
+/*     &kp LSHFT     &kp EXCL      &kp ASTRK     &kp FSLH      &kp EQUAL     &kp AMPS    ,   &kp AT        &kp COLON     &kp COMMA     &kp DOT       &kp SQT       &trans                          */
+/* //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯               */
+/*                                               &kp LGUI      &mo 1         &kp RET     ,   &kp SPACE     &mo 3         &kp RALT                                                                */
+/* //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯                                                           */
                         bindings = <
    &kp TAB   &trans    &trans    &trans    &trans    &trans      &kp CARET &kp LBRC  &kp RBRC  &kp DLLR  &trans    &trans
    &kp LCTRL &kp ESC   &kp LT    &kp GT    &kp MINUS &kp PIPE    &kp HASH  &kp LPAR  &kp RPAR  &kp SEMI  &kp DQT   &trans
    &kp LSHFT &kp EXCL  &kp ASTRK &kp FSLH  &kp EQUAL &kp AMPS    &kp AT    &kp COLON &kp COMMA &kp DOT   &kp SQT   &trans
                              &kp LGUI &mo 1   &kp RET     &kp SPACE &mo 3    &kp RALT
                         >;
+/*                 };                                                                                                                                                                              */
                 };
     };
 };
-                
-/*                 symbol_layer_2 { */
-/* //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ */
-/*     &trans         &trans        &trans        &trans        &trans        &trans      ,   &trans        &trans        &trans        &trans        &trans        &trans */
-/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
-/*     &kp ESC        &kp GRAVE    &kp LT         &kp GT        &kp MINUS     &kp PIPE    ,   &kp EXCL      &kp ASTRK     &kp FSLH      &kp EQUAL     &kp AMPS      &trans */
-/* //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ */
-/*     &kp TILDE      &kp PLUS     &kp LBKT       &kp RBKT      &kp PRCNT     &trans      ,   &kp HASH      &kp LPAR      &kp RPAR      &kp SEMI      &kp DQT       &trans */
-/* //╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯ */
-/*                                             &trans          &trans   ,      &trans        &trans */
-/* //                                        ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯ */
-/*     >; */
-/* }; */
-/*         }; */
-
-//};
