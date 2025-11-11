@@ -293,20 +293,20 @@
                 qwerty_5col {
                         display-name = "5-Col QWERTY";
 // -----------------------------------------------------------------------------------------
-// 5-column QWERTY - TAB/BSPC moved to top row, ' and ; on layer
-// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | BSPC |
-// |CTRL  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  | ESC  |
-// |SHFT  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | '    |
-//                    | GUI | LWR | SPC |   | ENT | RSE | tog |
+// 5-column QWERTY - outer columns are trans to mimic true 5-col keyboard
+// |trans |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |trans |
+// |trans |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |trans |
+// |trans |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |trans |
+//                    | GUI | LWR | TAB |   | SPC | RSE | tog |
                         bindings = <
  //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P         &kp BSPC
+    &trans        &kp Q         &kp W         &kp E         &kp R         &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P         &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LCTRL     &kp A         &kp S         &kp D         &kp F         &kp G            &kp H         &kp J         &kp K         &kp L         &kp SEMI      &kp ESC
+    &trans        &kp A         &kp S         &kp D         &kp F         &kp G            &kp H         &kp J         &kp K         &kp L         &kp SEMI      &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp SQT
+    &trans        &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &trans
  //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              &kp LGUI      &mo 6         &kp SPACE        &kp RET       &mo 7         &tog 5
+                                              &kp LGUI      &mo 6         &kp TAB          &kp SPACE     &mo 7         &tog 5
  //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
@@ -314,20 +314,20 @@
                 qwerty_5col_lower {
                         display-name = "5-Col Lower";
 // -----------------------------------------------------------------------------------------
-// 5-column lower layer with TAB/BSPC on outer positions
-// | TAB  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// |BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     | DEL  |
-// |SHFT  |     |     | rst | btl |     |   |     | btl |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | tog |
+// 5-column lower layer - outer columns are trans
+// |trans |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |trans |
+// |trans | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |BSPC |trans |
+// |trans |     |     | rst | btl |     |   |     | btl |     |     |     |trans |
+//                    | GUI |     | TAB |   | SPC |     | tog |
                         bindings = <
  //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp TAB       &kp N1        &kp N2        &kp N3        &kp N4        &kp N5           &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &kp BSPC
+    &trans        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5           &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &safe_bt_clear &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans        &kp DEL
+    &trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp BSPC      &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LSHFT     &trans        &trans        &safe_reset   &safe_bootloader &trans        &trans        &safe_bootloader &trans     &trans        &trans        &trans
+    &trans        &trans        &trans        &safe_reset   &safe_bootloader &trans        &trans        &safe_bootloader &trans     &trans        &trans        &trans
  //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              &kp LGUI      &trans        &kp SPACE        &kp RET       &trans        &tog 5
+                                              &kp LGUI      &trans        &kp TAB          &kp SPACE     &trans        &tog 5
  //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
@@ -335,20 +335,20 @@
                 qwerty_5col_raise {
                         display-name = "5-Col Raise";
 // -----------------------------------------------------------------------------------------
-// 5-column raise layer with symbols, TAB/BSPC on outer positions
-// | TAB  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |  `  |  ~  |  -  |  _  |  =  |   |  +  |  [  |  ]  |  {  |  }  | DEL  |
-// | SHFT |  |  |  \  |  <  |  >  |  ?  |   |  "  |  '  |  :  |  ;  |     |      |
-//                    | GUI |     | SPC |   | ENT |     | tog |
+// 5-column raise layer - outer columns are trans
+// |trans |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |trans |
+// |trans |  `  |  ~  |  -  |  _  |  =  |   |  +  |  [  |  ]  |  {  |  }  |trans |
+// |trans |  |  |  \  |  <  |  >  |  ?  |   |  "  |  '  |  :  |  ;  | DEL |trans |
+//                    | GUI |     | TAB |   | ENT |     | tog |
                         bindings = <
  //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp TAB       &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT        &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR      &kp BSPC
+    &trans        &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT        &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR      &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LCTRL     &kp GRAVE     &kp TILDE     &kp MINUS     &kp UNDER     &kp EQUAL        &kp PLUS      &kp LBKT      &kp RBKT      &kp LBRC      &kp RBRC      &kp DEL
+    &trans        &kp GRAVE     &kp TILDE     &kp MINUS     &kp UNDER     &kp EQUAL        &kp PLUS      &kp LBKT      &kp RBKT      &kp LBRC      &kp RBRC      &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LSHFT     &kp PIPE      &kp BSLH      &kp LT        &kp GT        &kp QMARK        &kp DQT       &kp SQT       &kp COLON     &kp SEMI      &trans        &trans
+    &trans        &kp PIPE      &kp BSLH      &kp LT        &kp GT        &kp QMARK        &kp DQT       &kp SQT       &kp COLON     &kp SEMI      &kp DEL       &trans
  //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              &kp LGUI      &trans        &kp SPACE        &kp RET       &trans        &tog 5
+                                              &kp LGUI      &trans        &kp TAB          &kp RET       &trans        &tog 5
  //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
