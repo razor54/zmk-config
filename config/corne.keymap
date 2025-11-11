@@ -176,7 +176,7 @@
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | BSPC |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | ENT |   | SPC | RSE | tog1|
+//                    | GUI | LWR | ENT |   | SPC | RSE |ALT/5|
                         bindings = <
  //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P         &kp BSPC
@@ -185,7 +185,7 @@
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &sk LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp ESC
  //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              &kp LGUI      &mo 2         &kp RET          &kp SPACE     &lt 3 SPACE   &tog 1
+                                              &kp LGUI      &mo 2         &kp RET          &kp SPACE     &lt 3 SPACE   &lt 5 RALT
  //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
@@ -290,65 +290,65 @@
                         >;
                 };
 
-                canary_5col {
-                        display-name = "Canary 5-col";
+                qwerty_5col {
+                        display-name = "5-Col QWERTY";
 // -----------------------------------------------------------------------------------------
-// Canary layout - 5 column optimized with outer columns for mods/layer access
-// |      |  W  |  L  |  Y  |  P  |  B  |   |  Z  |  F  |  O  |  U  |  '  |      |
-// | CTRL |  C  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  A  | CTRL |
-// | SHFT |  Q  |  J  |  V  |  D  |  K  |   |  X  |  H  |  /  |  ,  |  .  | SHFT |
-//                    | GUI | LWR | SPC |   | ENT | RSE | ALT |
+// 5-column QWERTY with outer columns as trans
+// |trans |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |trans |
+// |trans |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |trans |
+// |trans |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |trans |
+//                    | GUI | LWR | SPC |   | ENT | RSE | tog |
                         bindings = <
  //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &trans        &kp W         &kp L         &kp Y         &kp P         &kp B            &kp Z         &kp F         &kp O         &kp U         &kp SQT       &trans
+    &trans        &kp Q         &kp W         &kp E         &kp R         &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P         &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LCTRL     &kp C         &kp R         &kp S         &kp T         &kp G            &kp M         &kp N         &kp E         &kp I         &kp A         &kp RCTRL
+    &trans        &kp A         &kp S         &kp D         &kp F         &kp G            &kp H         &kp J         &kp K         &kp L         &kp SEMI      &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LSHFT     &kp Q         &kp J         &kp V         &kp D         &kp K            &kp X         &kp H         &kp FSLH      &kp COMMA     &kp DOT       &kp RSHFT
+    &trans        &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &trans
  //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              &kp LGUI      &mo 2         &kp SPACE        &kp RET       &mo 3         &kp RALT
+                                              &kp LGUI      &mo 6         &kp SPACE        &kp RET       &mo 7         &tog 5
  //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
 
-                hands_down_neu {
-                        display-name = "Hands Down Neu";
+                qwerty_5col_lower {
+                        display-name = "5-Col Lower";
 // -----------------------------------------------------------------------------------------
-// Hands Down Neu - optimized for low same-finger bigrams
-// |      |  W  |  F  |  M  |  P  |  V  |   |  /  |  .  |  Q  |  "  |  Z  |      |
-// | CTRL |  R  |  S  |  N  |  T  |  G  |   |  ,  |  A  |  E  |  I  |  H  | CTRL |
-// | SHFT |  X  |  C  |  L  |  D  |  B  |   |  -  |  U  |  O  |  Y  |  K  | SHFT |
-//                    | GUI | LWR | SPC |   | ENT | RSE | ALT |
+// 5-column lower layer with outer columns as trans
+// |trans |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |trans |
+// |trans | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |trans |
+// |trans |     |     | rst | btl |     |   |     | btl |     |     |     |trans |
+//                    | GUI |     | SPC |   | ENT |     | tog |
                         bindings = <
  //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &trans        &kp W         &kp F         &kp M         &kp P         &kp V            &kp FSLH      &kp DOT       &kp Q         &kp DQT       &kp Z         &trans
+    &trans        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5           &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LCTRL     &kp R         &kp S         &kp N         &kp T         &kp G            &kp COMMA     &kp A         &kp E         &kp I         &kp H         &kp RCTRL
+    &trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans        &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LSHFT     &kp X         &kp C         &kp L         &kp D         &kp B            &kp MINUS     &kp U         &kp O         &kp Y         &kp K         &kp RSHFT
+    &trans        &trans        &trans        &safe_reset   &safe_bootloader &trans        &trans        &safe_bootloader &trans     &trans        &trans        &trans
  //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              &kp LGUI      &mo 2         &kp SPACE        &kp RET       &mo 3         &kp RALT
+                                              &kp LGUI      &trans        &kp SPACE        &kp RET       &trans        &tog 5
  //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
 
-                aptmak_5col {
-                        display-name = "Aptmak 5-col";
+                qwerty_5col_raise {
+                        display-name = "5-Col Raise";
 // -----------------------------------------------------------------------------------------
-// Aptmak - 5 column layout optimized for English with low effort
-// |      |  V  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  '  |      |
-// | CTRL |  R  |  S  |  T  |  H  |  K  |   |  X  |  N  |  A  |  I  |  O  | CTRL |
-// | SHFT |  Q  |  C  |  G  |  D  |  Z  |   |  /  |  M  |  E  |  ,  |  .  | SHFT |
-//                    | GUI | LWR | SPC |   | ENT | RSE | ALT |
+// 5-column raise layer with outer columns as trans
+// |trans |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |trans |
+// |trans |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |trans |
+// |trans |     |     |     |     |     |   |  _  |  +  |  {  |  }  |  |  |trans |
+//                    | GUI |     | SPC |   | ENT |     | tog |
                         bindings = <
  //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &trans        &kp V         &kp W         &kp F         &kp P         &kp B            &kp J         &kp L         &kp U         &kp Y         &kp SQT       &trans
+    &trans        &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT        &kp CARET     &kp AMPS      &kp ASTRK     &kp LPAR      &kp RPAR      &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LCTRL     &kp R         &kp S         &kp T         &kp H         &kp K            &kp X         &kp N         &kp A         &kp I         &kp O         &kp RCTRL
+    &trans        &trans        &trans        &trans        &trans        &trans           &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH      &trans
  //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp LSHFT     &kp Q         &kp C         &kp G         &kp D         &kp Z            &kp FSLH      &kp M         &kp E         &kp COMMA     &kp DOT       &kp RSHFT
+    &trans        &trans        &trans        &trans        &trans        &trans           &kp UNDER     &kp PLUS      &kp LBRC      &kp RBRC      &kp PIPE      &trans
  //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              &kp LGUI      &mo 2         &kp SPACE        &kp RET       &mo 3         &kp RALT
+                                              &kp LGUI      &trans        &kp SPACE        &kp RET       &trans        &tog 5
  //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
