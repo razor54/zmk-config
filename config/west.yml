@@ -13,6 +13,9 @@ manifest:
     # support nice_oled and nice_epaper
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
+    # support dongle display
+    - name: englmaxi
+      url-base: https://github.com/englmaxi
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -25,6 +28,9 @@ manifest:
       revision: main
     - name: zmk-nice-oled
       remote: mctechnology17
+      revision: main
+    - name: zmk-dongle-display
+      remote: englmaxi
       revision: main
   self:
     path: config
