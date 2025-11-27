@@ -4,6 +4,7 @@ config ZMK_KEYBOARD_NAME
     default "Corne Peripheral Right"
 
 config ZMK_SPLIT_ROLE_PERIPHERAL
+    bool
     default y
 
 endif
