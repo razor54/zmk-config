@@ -27,6 +27,7 @@
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-direct";
+        // Dummy GPIO - dongle has no physical keys to scan
         input-gpios = <&gpio0 0 0>;
     };
 };
