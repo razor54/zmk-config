@@ -1,0 +1,13 @@
+if SHIELD_CORNE_PERIPHERAL_RIGHT
+
+config ZMK_KEYBOARD_NAME
+	default "Corne Peripheral Right"
+
+config ZMK_SPLIT
+	default y
+
+config ZMK_SPLIT_ROLE_PERIPHERAL
+	bool
+	default y
+
+endif
