@@ -10,12 +10,9 @@ manifest:
     #   url-base: https://github.com/M165437
     - name: urob
       url-base: https://github.com/urob
-    # support nice_oled and nice_epaper
+    # support nice_oled, nice_epaper, and corne dongle shields
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
-    # support dongle display
-    - name: englmaxi
-      url-base: https://github.com/englmaxi
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -26,11 +23,9 @@ manifest:
     - name: zmk-helpers
       remote: urob
       revision: main
-    - name: zmk-nice-oled
+    # mctechnology17 module provides nice_oled, nice_epaper, and corne dongle shields
+    - name: zmk-config
       remote: mctechnology17
-      revision: main
-    - name: zmk-dongle-display
-      remote: englmaxi
       revision: main
   self:
     path: config
