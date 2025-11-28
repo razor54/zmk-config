@@ -33,3 +33,15 @@ include:
     shield: corne_peripheral_left nice_view_adapter nice_epaper
   - board: nice_nano_v2
     shield: corne_peripheral_right nice_view_adapter nice_epaper
+  # Settings reset builds
+  - board: nice_nano_v2
+    shield: settings_reset
+  - board: nice_nano_v2
+    shield: corne_dongle settings_reset
+    artifact-name: corne_dongle-settings_reset-nice_nano_v2
+  - board: nice_nano_v2
+    shield: corne_peripheral_left settings_reset
+    artifact-name: corne_peripheral_left-settings_reset-nice_nano_v2
+  - board: nice_nano_v2
+    shield: corne_peripheral_right settings_reset
+    artifact-name: corne_peripheral_right-settings_reset-nice_nano_v2
