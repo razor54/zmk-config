@@ -5,11 +5,13 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
 
 / {
 	chosen {
 		zmk,kscan = &kscan0;
 		zmk,matrix-transform = &default_transform;
+		zmk,physical-layout = &corne_layout;
 	};
 
 	default_transform: keymap_transform_0 {
@@ -27,4 +29,12 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9)
 	kscan0: kscan {
 		compatible = "zmk,kscan-mock";
 	};
+
+	corne_layout: corne_layout {
+		compatible = "zmk,physical-layout";
+		display-name = "Corne";
+		transform = <&default_transform>;
+		kscan = <&kscan0>;
+	};
 };
+
