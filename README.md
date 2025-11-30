@@ -35,6 +35,16 @@ The Lower layer provides Bluetooth controls:
 - BT CLR: Clear Bluetooth connections
 - BT 0-4: Switch between paired devices
 
+### Dongle Configuration
+
+This repository includes a dongle build configuration that allows using a central controller to connect to both keyboard halves. The dongle configuration includes:
+
+- **Bluetooth Name**: Set to "Nice_Dongle" in the configuration
+- **Display Timeout**: Display will turn off after 1 minute of inactivity (configurable in `boards/shields/corne/corne_dongle_pro_micro.conf`)
+- **Deep Sleep**: Disabled to ensure the dongle always wakes up on key press from the keyboard halves (increases power consumption on battery, no impact when USB-powered)
+
+**Important**: If your dongle shows the wrong Bluetooth name (e.g., "eyeslash_sofle" from factory settings), you need to flash the `settings_reset` firmware first to clear the stored settings, then flash the dongle firmware again. The settings_reset firmware is automatically built by GitHub Actions.
+
 ## Building and Flashing
 
 To build and flash this firmware:
