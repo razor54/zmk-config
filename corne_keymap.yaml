@@ -24,7 +24,23 @@ layers:
     - B
   - [N, M, ',', ., /, ESC, LGUI, Lower Layer, RET, SPACE]
   - - {t: SPACE, h: Raise Layer}
-    - RALT
+    - {t: Gallium Layer, h: LALT}
+  Gallium Layer:
+  - [TAB, B, L, D, C, V, J, Y, O, U]
+  - [',', BSPC, LCTRL, N, R, T, S, G, P, H]
+  - - A
+    - E
+    - I
+    - /
+    - {t: LSHFT, h: sticky}
+    - X
+    - Q
+    - M
+    - W
+    - Z
+  - [K, F, '''', ;, ., ESC, LGUI, Lower Layer, RET, SPACE]
+  - - {t: SPACE, h: Raise Layer}
+    - {t: Gallium Layer, h: toggle}
   Lower Layer:
   - [TAB, '1', '2', '3', '4', '5', '6', '7', '8', '9']
   - - '0'
@@ -93,6 +109,175 @@ layers:
     - SPACE
   - - {type: held}
     - {s: '&sys_reset'}
+  Symbol Layer:
+  - - TAB
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ^
+    - '{'
+    - '}'
+    - $
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - LCTRL
+    - ESC
+    - <
+    - '>'
+    - '-'
+    - '|'
+    - '#'
+    - (
+  - - )
+    - ;
+    - '"'
+    - {t: ▽, type: trans}
+    - LSHFT
+    - '!'
+    - '*'
+    - /
+    - '='
+    - '&'
+  - - '@'
+    - ':'
+    - ','
+    - .
+    - ''''
+    - {t: ▽, type: trans}
+    - LGUI
+    - Gallium Layer
+    - RET
+    - SPACE
+  - [Raise Layer, RALT]
+  Symbol Layer 2:
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ESC
+    - '`'
+    - <
+    - '>'
+    - '-'
+    - '|'
+    - '!'
+    - '*'
+  - - /
+    - '='
+    - '&'
+    - {t: ▽, type: trans}
+    - '~'
+    - +
+    - '['
+    - ']'
+    - '%'
+    - {t: ▽, type: trans}
+  - - '#'
+    - (
+    - )
+    - ;
+    - '"'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  5-Col QWERTY:
+  - ['', Q, W, E, R, T, Y, U, I, O]
+  - - P
+    - ''
+    - ''
+    - {t: A, h: LMETA}
+    - {t: S, h: LEFT ALT}
+    - {t: D, h: LEFT SHIFT}
+    - {t: F, h: LCTRL}
+    - G
+    - H
+    - {t: J, h: RCTRL}
+  - - {t: K, h: RIGHT SHIFT}
+    - {t: L, h: LEFT ALT}
+    - {t: ;, h: LMETA}
+    - ''
+    - ''
+    - Z
+    - X
+    - C
+    - V
+    - B
+  - - N
+    - M
+    - ','
+    - .
+    - /
+    - ''
+    - LGUI
+    - {t: TAB, h: 5-Col Lower}
+    - RET
+    - SPACE
+  - - 5-Col Raise
+    - {t: 5-Col QWERTY, h: toggle}
+  5-Col Lower:
+  - ['', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+  - - '0'
+    - ''
+    - ''
+    - {t: BT, h: '0'}
+    - {t: BT, h: '1'}
+    - {t: BT, h: '2'}
+    - {t: BT, h: '3'}
+    - {t: BT, h: '4'}
+    - LEFT
+    - DOWN
+  - - UP
+    - RIGHT
+    - BSPC
+    - ''
+    - ''
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {s: '&sys_reset'}
+    - {s: '&bootloader'}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {s: '&bootloader'}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ''
+    - LGUI
+    - {type: held}
+    - RET
+    - SPACE
+  - - {t: ▽, type: trans}
+    - {t: 5-Col QWERTY, h: toggle}
+  5-Col Raise:
+  - ['', '!', '@', '#', $, '%', ^, '&', '*', (]
+  - [), '', '', '`', '~', '-', _, '=', +, '[']
+  - [']', '{', '}', '', '', '|', \, <, '>', '?']
+  - - '"'
+    - ''''
+    - ':'
+    - ;
+    - DEL
+    - ''
+    - LGUI
+    - {t: ▽, type: trans}
+    - RET
+    - SPACE
+  - - {type: held}
+    - {t: 5-Col QWERTY, h: toggle}
 combos:
 - p: [17, 18]
   k: '&caps_word'
