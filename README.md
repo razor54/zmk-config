@@ -10,16 +10,19 @@ Below is a visual representation of my keyboard layout including all layers:
 
 ## Features
 
-- **Default Layer**: QWERTY layout with home row mods (GACS) - tap rightmost thumb key to toggle Gallium layer
-- **Gallium Layer**: Alternative ergonomic layout - tap rightmost thumb key to return to Default layer
-- **Colemak Layer**: Colemak layout with home row mods - accessible via Lower layer
-- **Colemak-DH Layer**: Colemak Mod-DH layout with home row mods - accessible via Lower layer
-- **5-Column QWERTY**: 5-column QWERTY layout for 5-column keyboard simulation - accessible via Lower layer
-- **Lower Layer** (hold left thumb key): Numbers, bluetooth controls, arrow keys, and base layer switching
-  - Bottom row includes quick access to switch between base layers: Default (to0), Gallium (to1), 5-Col (to6), Colemak (to9), and Colemak-DH (to10)
-- **Raise Layer** (hold right thumb key): Symbols and special characters
-- **Symbol Layers**: Additional symbol layers for advanced punctuation
+- **Default Layer (0)**: QWERTY layout with home row mods (GACS) - tap rightmost thumb key to toggle Gallium layer
+- **Gallium Layer (1)**: Alternative ergonomic layout - tap rightmost thumb key to return to Default layer
+- **Colemak Layer (2)**: Colemak layout with home row mods - accessible via Lower layer (hold left thumb, press to2)
+- **Colemak-DH Layer (3)**: Colemak Mod-DH layout with home row mods - accessible via Lower layer (hold left thumb, press to3)
+- **Lower Layer (4)** (hold left thumb key): Numbers, bluetooth controls, arrow keys, and base layer switching
+  - Bottom row includes quick access to switch between base layers: Default (to0), Gallium (to1), 5-Col (to8), Colemak (to2), and Colemak-DH (to3)
+- **Raise Layer (5)** (hold right thumb key): Symbols and special characters
+- **Symbol Layers (6-7)**: Additional symbol layers for advanced punctuation
+- **5-Column QWERTY (8)**: 5-column QWERTY layout for 5-column keyboard simulation
+- **5-Column Lower/Raise (9-10)**: Number and symbol layers for 5-column layout
 - **Combos**: Escape using Q+W, and Caps Word using both inner thumb keys
+
+**Layer Priority**: Utility layers (Lower, Raise, Symbol) have higher layer numbers (4-10) than base layers (0-3), ensuring they can override keys on the base layers when activated.
 
 ## Home Row Mods
 
