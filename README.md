@@ -11,6 +11,9 @@ Below is a visual representation of my keyboard layout including all layers:
 ## Features
 
 - **Default Layer**: QWERTY layout with home row mods (GACS)
+- **Gallium Layer**: Alternative ergonomic layout (toggle from Default Layer)
+- **Colemak Layer**: Colemak layout with home row mods (layer 9)
+- **Colemak-DH Layer**: Colemak Mod-DH layout with home row mods (layer 10)
 - **Lower Layer** (accessed by holding the left thumb key): Numbers, bluetooth controls, and arrow keys
 - **Raise Layer** (accessed by holding the right thumb key): Symbols and special characters
 - **Combos**: Escape using Q+W, and Caps Word using both inner thumb keys
