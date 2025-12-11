@@ -41,11 +41,11 @@ include:
     shield: corne_right nice_view_adapter nice_view
     artifact-name: nice_corne_right_peripheral
 
-  # Nice Nano Dongle with OLED display
+  # Nice Nano Dongle without display (dongle_display not compatible with Zephyr 4.1/LVGL 9)
   - board: nice_nano@2.0.0
-    shield: corne_dongle_pro_micro dongle_display
+    shield: corne_dongle_pro_micro
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: nice_corne_dongle_oled
+    artifact-name: nice_corne_dongle
     snippet: studio-rpc-usb-uart
 
   # Settings reset
