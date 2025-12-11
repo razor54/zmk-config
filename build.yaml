@@ -20,35 +20,35 @@
 ---
 include:
   # Left half with nice_view
-  - board: nice_nano_v2
-    shield: corne_left nice_view_adapter nice_epaper
+  - board: nice_nano@2.0.0
+    shield: corne_left nice_view_adapter nice_view
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: corne_left_nice_view
 
   # Right half with nice_view
-  - board: nice_nano_v2
-    shield: corne_right nice_view_adapter nice_epaper
+  - board: nice_nano@2.0.0
+    shield: corne_right nice_view_adapter nice_view
     artifact-name: corne_right_nice_view
 
   # Peripheral left (for dongle mode)
-  - board: nice_nano_v2
-    shield: corne_left_peripheral nice_view_adapter nice_epaper
+  - board: nice_nano@2.0.0
+    shield: corne_left_peripheral nice_view_adapter nice_view
     artifact-name: nice_corne_left_peripheral
 
   # Peripheral right (for dongle mode)
-  - board: nice_nano_v2
-    shield: corne_right nice_view_adapter nice_epaper
+  - board: nice_nano@2.0.0
+    shield: corne_right nice_view_adapter nice_view
     artifact-name: nice_corne_right_peripheral
 
-  # Nice Nano Dongle with OLED display
-  - board: nice_nano_v2
-    shield: corne_dongle_pro_micro dongle_display
+  # Nice Nano Dongle without display (dongle_display not compatible with Zephyr 4.1/LVGL 9)
+  - board: nice_nano@2.0.0
+    shield: corne_dongle_pro_micro
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-    artifact-name: nice_corne_dongle_oled
+    artifact-name: nice_corne_dongle
     snippet: studio-rpc-usb-uart
 
   # Settings reset
-  - board: nice_nano_v2
+  - board: nice_nano@2.0.0
     shield: settings_reset
     artifact-name: nice_settings_reset
